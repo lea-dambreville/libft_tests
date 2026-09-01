@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <assert.h>
+
 #define TEST_ASSERT(test_name, condition) \
     do { \
         if (condition) { \
@@ -9,6 +10,7 @@
             printf("[FAIL] %s (Line %d)\n", test_name, __LINE__); \
         } \
     } while (0)
+    
 void test_ft_memcmp(void)
 {
     printf("--- Testing ft_memcmp ---\n");
