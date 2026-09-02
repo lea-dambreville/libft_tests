@@ -41,7 +41,7 @@ void	test_ft_isdigit(void)
 	int match_count = 0;
 	for (int i = 0; i <= 127; i++)
 	{
-		if ((ft_isdigit(i) != 0) == (isdigit(i) != 0))[cite: 1]
+		if ((ft_isdigit(i) != 0) == (isdigit(i) != 0))
 			match_count++;
 	}
 	TEST_ASSERT("Full 0-127 ASCII spectrum parity check", match_count == 128);
