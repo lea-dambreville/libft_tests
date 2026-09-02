@@ -5,13 +5,11 @@ void test_char(char c, int expected)
     int result = ft_isalpha(c);
     if (result == expected)
     {
-        printf("[PASS] Character '%c' (ASCII %d) 
--> Got: %d\n", c, c, result);
+        printf("[PASS] Character '%c' (ASCII %d) -> Got: %d\n", c, c, result);
     }
     else
     {
-        printf("[FAIL] Character '%c' (ASCII %d) -> 
-Expected: %d, Got: %d\n", c, c, expected, result);
+        printf("[FAIL] Character '%c' (ASCII %d) -> Expected: %d, Got: %d\n", c, c, expected, result);
     }
 }
 
@@ -45,11 +43,11 @@ int main(void)
     return (0);
 }
 
-Mini test
-#include <stdio.h>
-int main()
-{
-    printf("%d\n", ft_isalpha('b'));
-    printf("%d\n", ft_isalpha('*'));
-    return (0);
-}
+// // Mini Test
+// #include <stdio.h>
+// int main()
+// {
+//     printf("%d\n", ft_isalpha('b'));
+//     printf("%d\n", ft_isalpha('*'));
+//     return (0);
+// }
