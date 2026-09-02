@@ -42,12 +42,3 @@ int main(void)
 
     return (0);
 }
-
-// // Mini Test
-// #include <stdio.h>
-// int main()
-// {
-//     printf("%d\n", ft_isalpha('b'));
-//     printf("%d\n", ft_isalpha('*'));
-//     return (0);
-// }
