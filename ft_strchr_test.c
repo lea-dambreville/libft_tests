@@ -3,13 +3,13 @@
 
 // Custom test assertion macro
 #define TEST_ASSERT(test_name, condition) \
-	do { \
-		if (condition) { \
-			printf("[PASS] %s\n", test_name); \
-		} else { \
-			printf("[FAIL] %s (Line %d)\n", test_name, __LINE__); \
-		} \git
-	} while (0)
+    do { \
+        if (condition) { \
+            printf("[PASS] %s\n", test_name); \
+        } else { \
+            printf("[FAIL] %s (Line %d)\n", test_name, __LINE__); \
+        } \
+    } while (0)
 
 void	test_ft_strchr(void)
 {
@@ -35,14 +35,18 @@ void	test_ft_strchr(void)
 	{
 		const char *str = "Hello";
 		TEST_ASSERT("Search for '\\0' returns pointer to null terminator", ft_strchr(str, '\0') == (str + 5));
-		TEST_ASSERT("Search for empty string '\\0'", ft_strchr("", '\0') == "");
+		//FIXED
+		const char *empty_str = "";
+		TEST_ASSERT("Search for empty string '\\0'", ft_strchr(empty_str, '\0') == empty_str);
 	}
 
 	// 4. Int to Char Conversion & Negative ASCII Values
 	{
-		const char *str = "abc\x80def";
+		const char *str = "abc\x80" "def";
 		TEST_ASSERT("Find character passed as (char) int cast", ft_strchr(str, (char)0x80) == (str + 3));
-		TEST_ASSERT("Find int larger than 255 (int overflow bit shift)", ft_strchr("abc", 'a' + 256) == "abc");
+		// FIXED
+		const char *abc_str = "abc";
+		TEST_ASSERT("Find int larger than 255 (int overflow bit shift)", ft_strchr(abc_str, 'a' + 256) == abc_str);
 	}
 
 	// 5. Direct Parity Check with Standard libc strchr
