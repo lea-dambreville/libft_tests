@@ -32,7 +32,7 @@ void	test_ft_strncmp(void)
 	// 3. Bound Limits (n Parameter) & Zero Checks
 	{
 		TEST_ASSERT("Difference beyond n returns 0", ft_strncmp("abc", "abd", 2) == 0);
-		TEST_ASSERT("Zero length compare returns 0", ft_strncmp("abc", "xyz", 0) == 0);[cite: 2]
+		TEST_ASSERT("Zero length compare returns 0", ft_strncmp("abc", "xyz", 0) == 0);
 	}
 
 	// 4. Unsigned Char Comparison Edge Cases
