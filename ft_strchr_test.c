@@ -8,7 +8,7 @@
 			printf("[PASS] %s\n", test_name); \
 		} else { \
 			printf("[FAIL] %s (Line %d)\n", test_name, __LINE__); \
-		} \
+		} \git
 	} while (0)
 
 void	test_ft_strchr(void)
