@@ -38,7 +38,8 @@ void	test_ft_strnstr(void)
 		TEST_ASSERT("Empty needle returns haystack pointer", ft_strnstr(haystack, "", 5) == haystack);[cite: 2, 5]
 		TEST_ASSERT("Empty needle with len 0 returns haystack", ft_strnstr(haystack, "", 0) == haystack);[cite: 2, 5]
 		TEST_ASSERT("Empty haystack & non-empty needle returns NULL", ft_strnstr("", "test", 5) == NULL);
-		TEST_ASSERT("Both empty returns empty haystack pointer", ft_strnstr("", "", 5) == "");
+		const char *haystack1 = "";
+		TEST_ASSERT("Both empty returns empty haystack pointer", ft_strnstr(haystack, "", 5) == haystack1);
 	}
 
 	// 4. Overlapping Substrings & False Starts
