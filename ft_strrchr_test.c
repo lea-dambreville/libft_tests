@@ -33,15 +33,19 @@ void	test_ft_strrchr(void)
 	// 3. Searching for Null-Terminator '\0'
 	{
 		const char *str = "Hello World";
-		TEST_ASSERT("Search for '\\0' returns pointer to terminator", ft_strrchr(str, '\0') == (str + 11));[cite: 1]
-		TEST_ASSERT("Search for '\\0' in empty string", ft_strrchr("", '\0') == "");
+		TEST_ASSERT("Search for '\\0' returns pointer to terminator", ft_strrchr(str, '\0') == (str + 11));
+		const char *empty = "";
+		TEST_ASSERT("Search for '\\0' in empty string", ft_strrchr("", '\0') == empty);
 	}
 
 	// 4. Int Casting & Extended ASCII Values
 	{
-		const char *str = "abc\x80def\x80ghi";
-		TEST_ASSERT("Find last occurrence with (char) int cast", ft_strrchr(str, (char)0x80) == (str + 7));[cite: 1]
-		TEST_ASSERT("Character passed with int value > 255", ft_strrchr("abc", 'a' + 256) == "abc");[cite: 1]
+		// Breaking the literal forces \x80 to evaluate separately from 'def'
+		const char *str = "abc\x80" "def\x80" "ghi";
+		TEST_ASSERT("Find last occurrence with (char) int cast", ft_strrchr(str, (char)0x80) == (str + 7));
+		const char *abc_str = "abc";
+		TEST_ASSERT("Character passed with int value > 255", ft_strrchr(abc_str, 'a' + 256) == abc_str);
+
 	}
 
 	// 5. Parity Check with Standard libc strrchr
